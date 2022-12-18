@@ -36,6 +36,7 @@ Route::get('/dashboard', [App\Http\Controllers\DashboardController::class, 'load
 
 //ACTIVITY
 Route::get('/activity', [App\Http\Controllers\ActivityController::class, 'index'])->name('activity');
+Route::get('/activity/ViewActivity', [App\Http\Controllers\ActivityController::class, 'viewActv'])->name('activity/ViewActv');
 Route::get('/activity/AddNewActivity', [App\Http\Controllers\ActivityController::class, 'addActv'])->name('activity/AddActv');
 Route::get('/activity/ActivityApproval', [App\Http\Controllers\ActivityController::class, 'planActv'])->name('activity/PlanActv');
 
