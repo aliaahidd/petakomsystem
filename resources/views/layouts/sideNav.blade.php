@@ -51,12 +51,21 @@
 
                     @if( auth()->user()->category== "Committee" || auth()->user()->category== "Hosd")
                     <li class="nav-item">
-                        <a class="nav-link {{ request()->routeIs('dashboard*') ? 'active' : '' }}" href="{{ route('dashboard') }}">
+                        <a class="nav-link {{ request()->routeIs('editcalendar*') ? 'active' : '' }}" href="{{ route('editcalendar') }}">
+                            <i class="material-icons">calendar_month</i>
+                            <span>Calendar</span>
+                        </a>
+                    </li>
+                    @else 
+                    <li class="nav-item">
+                        <a class="nav-link {{ request()->routeIs('viewcalendar*') ? 'active' : '' }}" href="{{ route('viewcalendar') }}">
                             <i class="material-icons">calendar_month</i>
                             <span>Calendar</span>
                         </a>
                     </li>
                     @endif
+
+                    
 
 
                     @if(auth()->user()->category!= "Student" && auth()->user()->category!= "Lecturer")
