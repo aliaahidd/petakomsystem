@@ -3,6 +3,9 @@
 
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\EditCalendarController;
+use App\Http\Controllers\ViewCalendarController;
+
 
 /*
 |--------------------------------------------------------------------------
@@ -42,6 +45,11 @@ Route::get('/activity/ActivityApproval', [App\Http\Controllers\ActivityControlle
 
 
 //CALENDAR
+Route::get('viewcalendar', [App\Http\Controllers\ViewCalendarController::class, 'index'])->name('viewcalendar');
+Route::get('editcalendar', [App\Http\Controllers\EditCalendarController::class, 'index'])->name('editcalendar');
+Route::post('editcalendar/action', [App\Http\Controllers\EditCalendarController::class, 'action']);
 
 
 //PROPOSAL
+
+?>
